@@ -1,169 +1,93 @@
 # AlphaFold2 Algorithm Index
 
-This document provides a comprehensive mapping between the 32 algorithms from the AlphaFold2 supplementary materials and their implementations in the source code.
+This index provides a comprehensive mapping of all 32 algorithms from the AlphaFold2 supplementary materials to their source code implementations and explanation notebooks.
 
-## Quick Reference Table
+## Legend
+- ✅ Complete (includes pseudocode image, source code reference, NumPy implementation, and test examples)
 
-| Algorithm | Name | Source File | Class/Function | Lines |
-|-----------|------|-------------|----------------|-------|
-| 1 | MSABlockDeletion | `model/tf/data_transforms.py` | Data augmentation | 214 |
-| 2 | Inference | `model/modules.py` | `AlphaFold`, `AlphaFoldIteration` | 123-391 |
-| 3 | InputEmbedder | `model/modules.py` | `EmbeddingsAndEvoformer` | 1694-1760 |
-| 4 | relpos | `model/modules.py` | `EmbeddingsAndEvoformer` | 1744-1758 |
-| 5 | one_hot | `model/modules.py` | `EmbeddingsAndEvoformer` | 1745 |
-| 6 | EvoformerStack | `model/modules.py` | `EvoformerIteration` | 1553-1671 |
-| 7 | MSARowAttentionWithPairBias | `model/modules.py` | `MSARowAttentionWithPairBias` | 712-776 |
-| 8 | MSAColumnAttention | `model/modules.py` | `MSAColumnAttention` | 779-831 |
-| 9 | MSATransition | `model/modules.py` | `Transition` | 476-529 |
-| 10 | OuterProductMean | `model/modules.py` | `OuterProductMean` | 1414-1498 |
-| 11 | TriangleMultiplicationOutgoing | `model/modules.py` | `TriangleMultiplication` | 1250-1337 |
-| 12 | TriangleMultiplicationIncoming | `model/modules.py` | `TriangleMultiplication` | 1250-1337 |
-| 13 | TriangleAttentionStartingNode | `model/modules.py` | `TriangleAttention` | 892-951 |
-| 14 | TriangleAttentionEndingNode | `model/modules.py` | `TriangleAttention` | 892-951 |
-| 15 | PairTransition | `model/modules.py` | `Transition` | 476-529 |
-| 16 | TemplatePairStack | `model/modules.py` | `TemplatePairStack` | 393-473 |
-| 17 | TemplatePointwiseAttention | `model/modules.py` | `TemplateEmbedding` | 2014-2092 |
-| 18 | ExtraMsaStack | `model/modules.py` | `EmbeddingsAndEvoformer` | 1781-1812 |
-| 19 | MSAColumnGlobalAttention | `model/modules.py` | `MSAColumnGlobalAttention`, `GlobalAttention` | 622-709, 834-889 |
-| 20 | StructureModule | `model/folding.py` | `StructureModule`, `FoldIteration` | 281-559 |
-| 21 | rigidFrom3Points | `model/r3.py` | `rigids_from_3_points` | 78-110 |
-| 22 | InvariantPointAttention | `model/folding.py` | `InvariantPointAttention` | 37-279 |
-| 23 | BackboneUpdate | `model/folding.py` | `FoldIteration` | 362-374 |
-| 24 | computeAllAtomCoordinates | `model/all_atom.py` | `torsion_angles_to_frames`, `frames_and_literature_positions_to_atom14_pos` | 452-600 |
-| 25 | makeRotX | `model/all_atom.py` | Inside `torsion_angles_to_frames` | 453 |
-| 26 | renameSymmetricGroundTruthAtoms | `model/folding.py` | `compute_renamed_ground_truth` | 561-615 |
-| 27 | torsionAngleLoss | `model/folding.py` | `supervised_chi_loss` | 854-911 |
-| 28 | computeFAPE | `model/all_atom.py` | `frame_aligned_point_error` | 1025-1100 |
-| 29 | predictPerResidueLDDT | `model/modules.py` | `PredictedLDDTHead` | 999-1100 |
-| 30 | RecyclingInference | `model/modules.py` | `AlphaFold` | 344-390 |
-| 31 | RecyclingTraining | `model/modules.py` | `AlphaFold` | 344-390 |
-| 32 | RecyclingEmbedder | `model/modules.py` | `EmbeddingsAndEvoformer` | 1716-1741 |
+## Algorithms
 
-## Source Files Overview
+| # | Algorithm | Notebook | Source File | Status |
+|---|-----------|----------|-------------|--------|
+| 1 | MSA Block Deletion | [algorithm-1-MSABlockDeletion.ipynb](algorithm-1-MSABlockDeletion.ipynb) | `model/tf/data_transforms.py` | ✅ |
+| 2 | Inference | [algorithm-2-Inference.ipynb](algorithm-2-Inference.ipynb) | `model/modules.py:AlphaFold` | ✅ |
+| 3 | Input Embedder | [algorithm-3-InputEmbedder.ipynb](algorithm-3-InputEmbedder.ipynb) | `model/modules.py:EmbeddingsAndEvoformer` | ✅ |
+| 4 | relpos | [algorithm-4-relpos.ipynb](algorithm-4-relpos.ipynb) | `model/modules.py:EmbeddingsAndEvoformer` | ✅ |
+| 5 | one_hot | [algorithm-5-one_hot.ipynb](algorithm-5-one_hot.ipynb) | `jax.nn.one_hot` | ✅ |
+| 6 | Evoformer Stack | [algorithm-6-EvoformerStack.ipynb](algorithm-6-EvoformerStack.ipynb) | `model/modules.py:EvoformerIteration` | ✅ |
+| 7 | MSA Row Attention with Pair Bias | [algorithm-7-MSARowAttentionWithPairBias.ipynb](algorithm-7-MSARowAttentionWithPairBias.ipynb) | `model/modules.py:MSARowAttentionWithPairBias` | ✅ |
+| 8 | MSA Column Attention | [algorithm-8-MSAColumnAttention.ipynb](algorithm-8-MSAColumnAttention.ipynb) | `model/modules.py:MSAColumnAttention` | ✅ |
+| 9 | MSA Transition | [algorithm-9-MSATransition.ipynb](algorithm-9-MSATransition.ipynb) | `model/modules.py:Transition` | ✅ |
+| 10 | Outer Product Mean | [algorithm-10-OuterProductMean.ipynb](algorithm-10-OuterProductMean.ipynb) | `model/modules.py:OuterProductMean` | ✅ |
+| 11 | Triangle Multiplication (Outgoing) | [algorithm-11-TriangleMultiplicationOutgoing.ipynb](algorithm-11-TriangleMultiplicationOutgoing.ipynb) | `model/modules.py:TriangleMultiplication` | ✅ |
+| 12 | Triangle Multiplication (Incoming) | [algorithm-12-TriangleMultiplicationIncoming.ipynb](algorithm-12-TriangleMultiplicationIncoming.ipynb) | `model/modules.py:TriangleMultiplication` | ✅ |
+| 13 | Triangle Attention (Starting Node) | [algorithm-13-TriangleAttentionStartingNode.ipynb](algorithm-13-TriangleAttentionStartingNode.ipynb) | `model/modules.py:TriangleAttention` | ✅ |
+| 14 | Triangle Attention (Ending Node) | [algorithm-14-TriangleAttentionEndingNode.ipynb](algorithm-14-TriangleAttentionEndingNode.ipynb) | `model/modules.py:TriangleAttention` | ✅ |
+| 15 | Pair Transition | [algorithm-15-PairTransition.ipynb](algorithm-15-PairTransition.ipynb) | `model/modules.py:Transition` | ✅ |
+| 16 | Template Pair Stack | [algorithm-16-TemplatePairStack.ipynb](algorithm-16-TemplatePairStack.ipynb) | `model/modules.py:TemplatePairStack` | ✅ |
+| 17 | Template Pointwise Attention | [algorithm-17-TemplatePointwiseAttention.ipynb](algorithm-17-TemplatePointwiseAttention.ipynb) | `model/modules.py:Attention` | ✅ |
+| 18 | Extra MSA Stack | [algorithm-18-ExtraMsaStack.ipynb](algorithm-18-ExtraMsaStack.ipynb) | `model/modules.py:ExtraMsaStack` | ✅ |
+| 19 | MSA Column Global Attention | [algorithm-19-MSAColumnGlobalAttention.ipynb](algorithm-19-MSAColumnGlobalAttention.ipynb) | `model/modules.py:GlobalAttention` | ✅ |
+| 20 | Structure Module | [algorithm-20-StructureModule.ipynb](algorithm-20-StructureModule.ipynb) | `model/folding.py:StructureModule` | ✅ |
+| 21 | Rigid from 3 Points | [algorithm-21-rigidFrom3Points.ipynb](algorithm-21-rigidFrom3Points.ipynb) | `model/r3.py:rigids_from_3_points` | ✅ |
+| 22 | Invariant Point Attention | [algorithm-22-InvariantPointAttention.ipynb](algorithm-22-InvariantPointAttention.ipynb) | `model/folding.py:InvariantPointAttention` | ✅ |
+| 23 | Backbone Update | [algorithm-23-BackboneUpdate.ipynb](algorithm-23-BackboneUpdate.ipynb) | `model/folding.py:FoldIteration` | ✅ |
+| 24 | Compute All Atom Coordinates | [algorithm-24-computeAllAtomCoordinates.ipynb](algorithm-24-computeAllAtomCoordinates.ipynb) | `model/all_atom.py` | ✅ |
+| 25 | makeRotX | [algorithm-25-makeRotX.ipynb](algorithm-25-makeRotX.ipynb) | `model/all_atom.py` | ✅ |
+| 26 | Rename Symmetric Ground Truth Atoms | [algorithm-26-renameSymmetricGroundTruthAtoms.ipynb](algorithm-26-renameSymmetricGroundTruthAtoms.ipynb) | `model/folding.py:compute_renamed_ground_truth` | ✅ |
+| 27 | Torsion Angle Loss | [algorithm-27-torsionAngleLoss.ipynb](algorithm-27-torsionAngleLoss.ipynb) | `model/folding.py:supervised_chi_loss` | ✅ |
+| 28 | Compute FAPE | [algorithm-28-computeFAPE.ipynb](algorithm-28-computeFAPE.ipynb) | `model/all_atom.py:frame_aligned_point_error` | ✅ |
+| 29 | Predict Per-Residue LDDT | [algorithm-29-predictPerResidueLDDT.ipynb](algorithm-29-predictPerResidueLDDT.ipynb) | `model/modules.py:PredictedLDDTHead` | ✅ |
+| 30 | Recycling (Inference) | [algorithm-30-RecyclingInference.ipynb](algorithm-30-RecyclingInference.ipynb) | `model/modules.py:AlphaFold` | ✅ |
+| 31 | Recycling (Training) | [algorithm-31-RecyclingTraining.ipynb](algorithm-31-RecyclingTraining.ipynb) | `model/modules.py:AlphaFold` | ✅ |
+| 32 | Recycling Embedder | [algorithm-32-RecyclingEmbedder.ipynb](algorithm-32-RecyclingEmbedder.ipynb) | `model/modules.py:EmbeddingsAndEvoformer` | ✅ |
 
-### `model/modules.py`
-Contains the main neural network modules:
-- Input embedding (Algorithm 3-5)
-- Evoformer blocks (Algorithm 6-15)
-- Template processing (Algorithm 16-17)
-- Extra MSA processing (Algorithm 18-19)
-- Recycling (Algorithm 30-32)
-- pLDDT prediction (Algorithm 29)
+## Categories
 
-### `model/folding.py`
-Contains the Structure Module:
-- Structure prediction (Algorithm 20)
-- IPA attention (Algorithm 22)
-- Backbone updates (Algorithm 23)
-- Loss functions (Algorithm 26-27)
+### Data Preprocessing
+- Algorithm 1: MSA Block Deletion
 
-### `model/all_atom.py`
-Contains atomic coordinate handling:
-- Coordinate computation (Algorithm 24-25)
-- FAPE loss (Algorithm 28)
+### Embedding
+- Algorithm 3: Input Embedder
+- Algorithm 4: relpos (Relative Position Encoding)
+- Algorithm 5: one_hot
 
-### `model/r3.py`
-Contains 3D geometry utilities:
-- Rigid body operations (Algorithm 21)
+### Evoformer
+- Algorithm 6: Evoformer Stack
+- Algorithm 7: MSA Row Attention with Pair Bias
+- Algorithm 8: MSA Column Attention
+- Algorithm 9: MSA Transition
+- Algorithm 10: Outer Product Mean
+- Algorithm 11-12: Triangle Multiplication (Outgoing/Incoming)
+- Algorithm 13-14: Triangle Attention (Starting/Ending Node)
+- Algorithm 15: Pair Transition
 
-### `model/tf/data_transforms.py`
-Contains data preprocessing:
-- MSA block deletion (Algorithm 1)
+### Templates
+- Algorithm 16: Template Pair Stack
+- Algorithm 17: Template Pointwise Attention
 
-## Notebook Status
+### Extra MSA
+- Algorithm 18: Extra MSA Stack
+- Algorithm 19: MSA Column Global Attention
 
-| Notebook | Status | Has Test Code |
-|----------|--------|---------------|
-| algorithm-1-MSABlockDeletion.ipynb | Empty | No |
-| algorithm-2-Inference.ipynb | Empty | No |
-| algorithm-3-InputEmbedder.ipynb | ✅ Complete | Yes |
-| algorithm-4-relpos.ipynb | Empty | No |
-| algorithm-5-one_hot.ipynb | Empty | No |
-| algorithm-6-EvoformerStack.ipynb | ✅ Complete | Yes |
-| algorithm-7-MSARowAttentionWithPairBias.ipynb | ✅ Complete | Yes |
-| algorithm-8-MSAColumnAttention.ipynb | ✅ Complete | Yes |
-| algorithm-9-MSATransition.ipynb | ✅ Complete | Yes |
-| algorithm-10-OuterProductMean.ipynb | ✅ Complete | Yes |
-| algorithm-11-TriangleMultiplicationOutgoing.ipynb | ✅ Complete | Yes |
-| algorithm-12-TriangleMultiplicationIncoming.ipynb | ✅ Complete | Yes |
-| algorithm-13-TriangleAttentionStartingNode.ipynb | ✅ Complete | Yes |
-| algorithm-14-TriangleAttentionEndingNode.ipynb | Empty (covered by Alg 13) | No |
-| algorithm-15-PairTransition.ipynb | Empty | No |
-| algorithm-16-TemplatePairStack.ipynb | Empty | No |
-| algorithm-17-TemplatePointwiseAttention.ipynb | Empty | No |
-| algorithm-18-ExtraMsaStack.ipynb | Empty | No |
-| algorithm-19-MSAColumnGlobalAttention.ipynb | Empty | No |
-| algorithm-20-StructureModule.ipynb | ✅ Complete | Yes |
-| algorithm-21-rigidFrom3Points.ipynb | ✅ Complete | Yes |
-| algorithm-22-InvariantPointAttention.ipynb | ✅ Complete | Yes |
-| algorithm-23-BackboneUpdate.ipynb | Empty | No |
-| algorithm-24-computeAllAtomCoordinates.ipynb | Empty | No |
-| algorithm-25-makeRotX.ipynb | Empty | No |
-| algorithm-26-renameSymmetricGroundTruthAtoms.ipynb | Empty | No |
-| algorithm-27-torsionAngleLoss.ipynb | Empty | No |
-| algorithm-28-computeFAPE.ipynb | ✅ Complete | Yes |
-| algorithm-29-predictPerResidueLDDT.ipynb | ✅ Complete | Yes |
-| algorithm-30-RecyclingInference.ipynb | Empty | No |
-| algorithm-31-RecyclingTraining.ipynb | Empty | No |
-| algorithm-32-RecyclingEmbedder.ipynb | Empty | No |
+### Structure Module
+- Algorithm 20: Structure Module
+- Algorithm 21: Rigid from 3 Points
+- Algorithm 22: Invariant Point Attention (IPA)
+- Algorithm 23: Backbone Update
+- Algorithm 24: Compute All Atom Coordinates
+- Algorithm 25: makeRotX
 
-## Key Architecture Components
+### Losses
+- Algorithm 26: Rename Symmetric Ground Truth Atoms
+- Algorithm 27: Torsion Angle Loss
+- Algorithm 28: Compute FAPE
+- Algorithm 29: Predict Per-Residue LDDT (pLDDT)
 
-### 1. Evoformer (Algorithms 6-15)
-The central iterative refinement module:
-```
-Input: MSA representation (m), Pair representation (z)
+### Recycling
+- Algorithm 30: Recycling (Inference)
+- Algorithm 31: Recycling (Training)
+- Algorithm 32: Recycling Embedder
 
-For each block:
-  m = m + RowAttention(m, z)      # Alg 7
-  m = m + ColumnAttention(m)      # Alg 8
-  m = m + Transition(m)           # Alg 9
-  z = z + OuterProductMean(m)     # Alg 10
-  z = z + TriMulOut(z)            # Alg 11
-  z = z + TriMulIn(z)             # Alg 12
-  z = z + TriAttnStart(z)         # Alg 13
-  z = z + TriAttnEnd(z)           # Alg 14
-  z = z + Transition(z)           # Alg 15
-
-Output: Refined m, z
-```
-
-### 2. Structure Module (Algorithms 20-24)
-Converts representations to 3D coordinates:
-```
-Input: Single representation (s), Pair representation (z)
-
-Initialize: T = identity rigid transforms
-
-For each iteration:
-  s = s + IPA(s, z, T)            # Alg 22
-  s = s + Transition(s)
-  T = T ∘ BackboneUpdate(s)       # Alg 23
-  
-sidechains = PredictTorsions(s)   # Alg 24
-atoms = ComputeAtomCoords(T, sidechains)
-
-Output: Atom coordinates
-```
-
-### 3. Loss Functions (Algorithms 26-28)
-```
-FAPE = FrameAlignedPointError(predicted, target)  # Alg 28
-chi_loss = TorsionAngleLoss(angles)               # Alg 27
-```
-
-## Running the Notebooks
-
-Each completed notebook can be run standalone with NumPy. Example:
-
-```bash
-cd AF2-NoteBooks
-jupyter notebook algorithm-6-EvoformerStack.ipynb
-```
-
-The notebooks include:
-1. Algorithm pseudocode from the paper
-2. Source code references
-3. NumPy implementation for testing
-4. Example inputs and outputs
-5. Verification tests
+### Main Pipeline
+- Algorithm 2: Inference
