@@ -18,6 +18,100 @@ in AF2-PPT file.
 [slides](https://docs.google.com/presentation/d/1mnffk23ev2QMDzGZ5w1skXEadTe54l8-Uei6ACce8eI/edit#slide=id.p) /[.pptx](https://github.com/chenxingqiang/ref-Alphafold-Code/blob/main/AF2-PPT/ColabFold.pptx) in AF2-PPT file.
 
 ## Learning by Code  
+
+### 📓 AlphaFold2 Algorithm Notebooks (32 Complete!)
+
+We provide **32 Jupyter Notebooks** covering every algorithm from the AlphaFold2 supplementary materials. Each notebook includes:
+- Algorithm pseudocode/image reference
+- Source code location mapping
+- NumPy implementation
+- Executable test cases with verification
+
+👉 **[Full Algorithm Index](AF2-NoteBooks/ALGORITHM_INDEX.md)**
+
+#### Quick Links by Category
+
+| Category | Algorithms | Notebooks |
+|----------|------------|-----------|
+| **Data Preprocessing** | MSA Block Deletion | [Algorithm 1](AF2-NoteBooks/algorithm-1-MSABlockDeletion.ipynb) |
+| **Embedding** | Input Embedder, relpos, one_hot | [Alg 3](AF2-NoteBooks/algorithm-3-InputEmbedder.ipynb), [Alg 4](AF2-NoteBooks/algorithm-4-relpos.ipynb), [Alg 5](AF2-NoteBooks/algorithm-5-one_hot.ipynb) |
+| **Evoformer** | Stack, MSA Attention, Triangle Ops | [Alg 6-15](AF2-NoteBooks/) |
+| **Templates** | Pair Stack, Pointwise Attention | [Alg 16](AF2-NoteBooks/algorithm-16-TemplatePairStack.ipynb), [Alg 17](AF2-NoteBooks/algorithm-17-TemplatePointwiseAttention.ipynb) |
+| **Extra MSA** | Stack, Global Attention | [Alg 18](AF2-NoteBooks/algorithm-18-ExtraMsaStack.ipynb), [Alg 19](AF2-NoteBooks/algorithm-19-MSAColumnGlobalAttention.ipynb) |
+| **Structure Module** | IPA, Backbone, Atom Coords | [Alg 20-25](AF2-NoteBooks/) |
+| **Losses** | FAPE, Torsion, pLDDT | [Alg 26-29](AF2-NoteBooks/) |
+| **Recycling** | Inference, Training, Embedder | [Alg 30](AF2-NoteBooks/algorithm-30-RecyclingInference.ipynb), [Alg 31](AF2-NoteBooks/algorithm-31-RecyclingTraining.ipynb), [Alg 32](AF2-NoteBooks/algorithm-32-RecyclingEmbedder.ipynb) |
+| **Main Pipeline** | Full Inference | [Algorithm 2](AF2-NoteBooks/algorithm-2-Inference.ipynb) |
+
+<details>
+<summary><b>📋 Complete Algorithm List (Click to Expand)</b></summary>
+
+| # | Algorithm | Notebook Link |
+|---|-----------|---------------|
+| 1 | MSA Block Deletion | [algorithm-1-MSABlockDeletion.ipynb](AF2-NoteBooks/algorithm-1-MSABlockDeletion.ipynb) |
+| 2 | Inference | [algorithm-2-Inference.ipynb](AF2-NoteBooks/algorithm-2-Inference.ipynb) |
+| 3 | Input Embedder | [algorithm-3-InputEmbedder.ipynb](AF2-NoteBooks/algorithm-3-InputEmbedder.ipynb) |
+| 4 | relpos | [algorithm-4-relpos.ipynb](AF2-NoteBooks/algorithm-4-relpos.ipynb) |
+| 5 | one_hot | [algorithm-5-one_hot.ipynb](AF2-NoteBooks/algorithm-5-one_hot.ipynb) |
+| 6 | Evoformer Stack | [algorithm-6-EvoformerStack.ipynb](AF2-NoteBooks/algorithm-6-EvoformerStack.ipynb) |
+| 7 | MSA Row Attention with Pair Bias | [algorithm-7-MSARowAttentionWithPairBias.ipynb](AF2-NoteBooks/algorithm-7-MSARowAttentionWithPairBias.ipynb) |
+| 8 | MSA Column Attention | [algorithm-8-MSAColumnAttention.ipynb](AF2-NoteBooks/algorithm-8-MSAColumnAttention.ipynb) |
+| 9 | MSA Transition | [algorithm-9-MSATransition.ipynb](AF2-NoteBooks/algorithm-9-MSATransition.ipynb) |
+| 10 | Outer Product Mean | [algorithm-10-OuterProductMean.ipynb](AF2-NoteBooks/algorithm-10-OuterProductMean.ipynb) |
+| 11 | Triangle Multiplication (Outgoing) | [algorithm-11-TriangleMultiplicationOutgoing.ipynb](AF2-NoteBooks/algorithm-11-TriangleMultiplicationOutgoing.ipynb) |
+| 12 | Triangle Multiplication (Incoming) | [algorithm-12-TriangleMultiplicationIncoming.ipynb](AF2-NoteBooks/algorithm-12-TriangleMultiplicationIncoming.ipynb) |
+| 13 | Triangle Attention (Starting Node) | [algorithm-13-TriangleAttentionStartingNode.ipynb](AF2-NoteBooks/algorithm-13-TriangleAttentionStartingNode.ipynb) |
+| 14 | Triangle Attention (Ending Node) | [algorithm-14-TriangleAttentionEndingNode.ipynb](AF2-NoteBooks/algorithm-14-TriangleAttentionEndingNode.ipynb) |
+| 15 | Pair Transition | [algorithm-15-PairTransition.ipynb](AF2-NoteBooks/algorithm-15-PairTransition.ipynb) |
+| 16 | Template Pair Stack | [algorithm-16-TemplatePairStack.ipynb](AF2-NoteBooks/algorithm-16-TemplatePairStack.ipynb) |
+| 17 | Template Pointwise Attention | [algorithm-17-TemplatePointwiseAttention.ipynb](AF2-NoteBooks/algorithm-17-TemplatePointwiseAttention.ipynb) |
+| 18 | Extra MSA Stack | [algorithm-18-ExtraMsaStack.ipynb](AF2-NoteBooks/algorithm-18-ExtraMsaStack.ipynb) |
+| 19 | MSA Column Global Attention | [algorithm-19-MSAColumnGlobalAttention.ipynb](AF2-NoteBooks/algorithm-19-MSAColumnGlobalAttention.ipynb) |
+| 20 | Structure Module | [algorithm-20-StructureModule.ipynb](AF2-NoteBooks/algorithm-20-StructureModule.ipynb) |
+| 21 | Rigid from 3 Points | [algorithm-21-rigidFrom3Points.ipynb](AF2-NoteBooks/algorithm-21-rigidFrom3Points.ipynb) |
+| 22 | Invariant Point Attention | [algorithm-22-InvariantPointAttention.ipynb](AF2-NoteBooks/algorithm-22-InvariantPointAttention.ipynb) |
+| 23 | Backbone Update | [algorithm-23-BackboneUpdate.ipynb](AF2-NoteBooks/algorithm-23-BackboneUpdate.ipynb) |
+| 24 | Compute All Atom Coordinates | [algorithm-24-computeAllAtomCoordinates.ipynb](AF2-NoteBooks/algorithm-24-computeAllAtomCoordinates.ipynb) |
+| 25 | makeRotX | [algorithm-25-makeRotX.ipynb](AF2-NoteBooks/algorithm-25-makeRotX.ipynb) |
+| 26 | Rename Symmetric Ground Truth Atoms | [algorithm-26-renameSymmetricGroundTruthAtoms.ipynb](AF2-NoteBooks/algorithm-26-renameSymmetricGroundTruthAtoms.ipynb) |
+| 27 | Torsion Angle Loss | [algorithm-27-torsionAngleLoss.ipynb](AF2-NoteBooks/algorithm-27-torsionAngleLoss.ipynb) |
+| 28 | Compute FAPE | [algorithm-28-computeFAPE.ipynb](AF2-NoteBooks/algorithm-28-computeFAPE.ipynb) |
+| 29 | Predict Per-Residue LDDT | [algorithm-29-predictPerResidueLDDT.ipynb](AF2-NoteBooks/algorithm-29-predictPerResidueLDDT.ipynb) |
+| 30 | Recycling (Inference) | [algorithm-30-RecyclingInference.ipynb](AF2-NoteBooks/algorithm-30-RecyclingInference.ipynb) |
+| 31 | Recycling (Training) | [algorithm-31-RecyclingTraining.ipynb](AF2-NoteBooks/algorithm-31-RecyclingTraining.ipynb) |
+| 32 | Recycling Embedder | [algorithm-32-RecyclingEmbedder.ipynb](AF2-NoteBooks/algorithm-32-RecyclingEmbedder.ipynb) |
+
+</details>
+
+### 📓 AlphaFold3 Algorithm Notebooks (NEW!)
+
+We now include **AlphaFold3** algorithm notebooks! AF3 introduces significant architectural changes including diffusion-based structure prediction.
+
+👉 **[AlphaFold3 Algorithm Index](AF3-NoteBooks/ALGORITHM_INDEX.md)**
+
+#### Key AF3 Components
+
+| Category | Key Algorithms | Notebooks |
+|----------|---------------|-----------|
+| **Input** | MSA Features, Templates, Atom Features | [Alg 1-4](AF3-NoteBooks/) |
+| **MSA Module** | Outer Product, MSA Attention | [Alg 5-7](AF3-NoteBooks/) |
+| **Pairformer** | Triangle Ops, Single Attention | [Alg 8-14](AF3-NoteBooks/algorithm-08-PairformerStack.ipynb) |
+| **Diffusion** | Diffusion Module, AdaLN, Transformer | [Alg 15](AF3-NoteBooks/algorithm-15-DiffusionModule.ipynb), [Alg 16](AF3-NoteBooks/algorithm-16-AdaptiveLayerNorm.ipynb) |
+| **Confidence** | Distogram, Confidence, LDDT | [Alg 20-23](AF3-NoteBooks/) |
+
+#### AF3 Source Code Submodules
+
+```bash
+# Official AlphaFold3
+AF3-Ref-src/alphafold3-official/
+
+# PyTorch Implementation (lucidrains)
+AF3-Ref-src/alphafold3-pytorch/
+
+# Architecture Walkthrough
+AF3-Ref-src/alphafold3-walkthrough/
+```
+
 ### Practice on Modeling Test of AF2
 - https://github.com/sokrypton/ColabFold.git
 
