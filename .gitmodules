@@ -1,0 +1,9 @@
+[submodule "AF3-Ref-src/alphafold3-official"]
+	path = AF3-Ref-src/alphafold3-official
+	url = https://github.com/google-deepmind/alphafold3.git
+[submodule "AF3-Ref-src/alphafold3-pytorch"]
+	path = AF3-Ref-src/alphafold3-pytorch
+	url = https://github.com/lucidrains/alphafold3-pytorch.git
+[submodule "AF3-Ref-src/alphafold3-walkthrough"]
+	path = AF3-Ref-src/alphafold3-walkthrough
+	url = https://github.com/shenyichong/alphafold3-architecture-walkthrough.git

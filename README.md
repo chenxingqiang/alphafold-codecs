@@ -83,6 +83,35 @@ We provide **32 Jupyter Notebooks** covering every algorithm from the AlphaFold2
 
 </details>
 
+### 📓 AlphaFold3 Algorithm Notebooks (NEW!)
+
+We now include **AlphaFold3** algorithm notebooks! AF3 introduces significant architectural changes including diffusion-based structure prediction.
+
+👉 **[AlphaFold3 Algorithm Index](AF3-NoteBooks/ALGORITHM_INDEX.md)**
+
+#### Key AF3 Components
+
+| Category | Key Algorithms | Notebooks |
+|----------|---------------|-----------|
+| **Input** | MSA Features, Templates, Atom Features | [Alg 1-4](AF3-NoteBooks/) |
+| **MSA Module** | Outer Product, MSA Attention | [Alg 5-7](AF3-NoteBooks/) |
+| **Pairformer** | Triangle Ops, Single Attention | [Alg 8-14](AF3-NoteBooks/algorithm-08-PairformerStack.ipynb) |
+| **Diffusion** | Diffusion Module, AdaLN, Transformer | [Alg 15](AF3-NoteBooks/algorithm-15-DiffusionModule.ipynb), [Alg 16](AF3-NoteBooks/algorithm-16-AdaptiveLayerNorm.ipynb) |
+| **Confidence** | Distogram, Confidence, LDDT | [Alg 20-23](AF3-NoteBooks/) |
+
+#### AF3 Source Code Submodules
+
+```bash
+# Official AlphaFold3
+AF3-Ref-src/alphafold3-official/
+
+# PyTorch Implementation (lucidrains)
+AF3-Ref-src/alphafold3-pytorch/
+
+# Architecture Walkthrough
+AF3-Ref-src/alphafold3-walkthrough/
+```
+
 ### Practice on Modeling Test of AF2
 - https://github.com/sokrypton/ColabFold.git
 
