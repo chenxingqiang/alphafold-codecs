@@ -112,6 +112,36 @@ AF3-Ref-src/alphafold3-pytorch/
 AF3-Ref-src/alphafold3-walkthrough/
 ```
 
+### 📓 Boltz Algorithm Notebooks (NEW!)
+
+We now include **Boltz** algorithm notebooks! Boltz is a family of models for biomolecular interaction prediction:
+- **Boltz-1**: First fully open source model to approach AlphaFold3 accuracy
+- **Boltz-2**: Adds binding affinity prediction, approaching FEP accuracy 1000x faster
+
+👉 **[Boltz Algorithm Index](Boltz-NoteBooks/ALGORITHM_INDEX.md)**
+
+#### Key Boltz Components
+
+| Category | Key Algorithms | Notebooks |
+|----------|---------------|-----------|
+| **Input Processing** | Input Embedder, Atom Encoder, RelPos | [Alg 1-3](Boltz-NoteBooks/) |
+| **MSA Module** | MSA Module, Outer Product, Pair Averaging | [Alg 4-6](Boltz-NoteBooks/) |
+| **Pairformer** | Pairformer, Triangle Ops, Attention | [Alg 7-11](Boltz-NoteBooks/) |
+| **Diffusion** | Diffusion Module, Transformer, Fourier | [Alg 12-15](Boltz-NoteBooks/) |
+| **Confidence & Affinity** | Confidence, Distogram, Affinity (Boltz-2) | [Alg 16-18](Boltz-NoteBooks/) |
+| **Loss Functions** | Diffusion Loss, Confidence Loss | [Alg 19-20](Boltz-NoteBooks/) |
+
+#### Boltz Source Code Submodule
+
+```bash
+# Official Boltz Repository
+Boltz-Ref-src/boltz-official/
+```
+
+**Papers:**
+- [Boltz-1: bioRxiv 2024.11.19.624167](https://doi.org/10.1101/2024.11.19.624167)
+- [Boltz-2: bioRxiv 2025.06.14.659707](https://doi.org/10.1101/2025.06.14.659707)
+
 ### Practice on Modeling Test of AF2
 - https://github.com/sokrypton/ColabFold.git
 

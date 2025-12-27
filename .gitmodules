@@ -7,3 +7,6 @@
 [submodule "AF3-Ref-src/alphafold3-walkthrough"]
 	path = AF3-Ref-src/alphafold3-walkthrough
 	url = https://github.com/shenyichong/alphafold3-architecture-walkthrough.git
+[submodule "Boltz-Ref-src/boltz-official"]
+	path = Boltz-Ref-src/boltz-official
+	url = https://github.com/jwohlwend/boltz.git
