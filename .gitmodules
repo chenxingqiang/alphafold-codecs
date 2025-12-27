@@ -10,3 +10,6 @@
 [submodule "Boltz-Ref-src/boltz-official"]
 	path = Boltz-Ref-src/boltz-official
 	url = https://github.com/jwohlwend/boltz.git
+[submodule "Boltz-Ref-src/boltzina"]
+	path = Boltz-Ref-src/boltzina
+	url = https://github.com/ohuelab/boltzina.git

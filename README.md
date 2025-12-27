@@ -142,6 +142,31 @@ Boltz-Ref-src/boltz-official/
 - [Boltz-1: bioRxiv 2024.11.19.624167](https://doi.org/10.1101/2024.11.19.624167)
 - [Boltz-2: bioRxiv 2025.06.14.659707](https://doi.org/10.1101/2025.06.14.659707)
 
+### 📓 Boltz-2 Specific Notebooks (NEW!)
+
+Boltz-2 introduces **binding affinity prediction** - the first DL model approaching FEP accuracy while being 1000x faster.
+
+👉 **[Boltz-2 Algorithm Index](Boltz2-NoteBooks/ALGORITHM_INDEX.md)**
+
+#### Boltz-2 New Features
+
+| Category | Key Algorithms | Notebooks |
+|----------|---------------|-----------|
+| **Affinity Prediction** | Affinity Module, Gaussian Smearing | [Alg 1-2](Boltz2-NoteBooks/) |
+| **Contact Guidance** | Contact Conditioning | [Alg 3](Boltz2-NoteBooks/algorithm-03-ContactConditioning.ipynb) |
+| **Enhanced v2 Modules** | Input v2, Template v2, Diffusion v2 | [Alg 5-7](Boltz2-NoteBooks/) |
+| **Improved Confidence** | Confidence v2, B-Factor | [Alg 8, 10](Boltz2-NoteBooks/) |
+
+#### Boltz-2 Submodules
+
+```bash
+# Official Repository (contains both Boltz-1 and Boltz-2)
+Boltz-Ref-src/boltz-official/
+
+# Boltzina - Virtual Screening with Boltz-2
+Boltz-Ref-src/boltzina/
+```
+
 ### Practice on Modeling Test of AF2
 - https://github.com/sokrypton/ColabFold.git
 
